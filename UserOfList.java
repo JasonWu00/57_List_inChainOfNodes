@@ -6,7 +6,7 @@ public class UserOfList {
         List_inChainOfNodes list = new List_inChainOfNodes();
 
         // System.out.println( "number of elements: " + list.size() );
-        
+
         // // the spec requests that toString include the size
         // System.out.println( "empty list: " + list
                           // + System.lineSeparator());

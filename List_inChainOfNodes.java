@@ -8,7 +8,7 @@ public class List_inChainOfNodes{
     /**
       Construct an empty list
      */
-     
+
 
     /**
       @return the number of elements in this list
@@ -16,22 +16,24 @@ public class List_inChainOfNodes{
     // public int size() {
     // }
 
-    
+
      /**
        @return a string representation of this list,
        format:
-           # elements [element0,element1,element2,] 
+           # elements [element0,element1,element2,]
       */
     // public String toString() {
     // }
-    
-    
+
+
     /**
       Append @value to the head of this list.
 
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean addAsHead( Object val) {
+       Object thing = new String("hi");
+       Node restOfBody = new Node(thing);
         return true;
      }
 }
