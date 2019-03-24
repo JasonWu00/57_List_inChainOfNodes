@@ -4,6 +4,7 @@
 
 public class List_inChainOfNodes{
     private Node headReference;
+    private int length;
 
     /**
       Construct an empty list
@@ -13,8 +14,9 @@ public class List_inChainOfNodes{
     /**
       @return the number of elements in this list
      */
-    // public int size() {
-    // }
+    public int size() {
+      return length;
+    }
 
 
      /**
@@ -22,8 +24,14 @@ public class List_inChainOfNodes{
        format:
            # elements [element0,element1,element2,]
       */
-    // public String toString() {
-    // }
+    public String toString() {
+      String output = "";
+      if (headReference != null)
+        output += length + " elements [" + headReference.toString() + "]";
+      else
+        output = "0 elements [null]";
+      return output;
+    }
 
 
     /**
@@ -32,8 +40,10 @@ public class List_inChainOfNodes{
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean addAsHead( Object val) {
-       Object thing = new String("hi");
-       Node restOfBody = new Node(thing);
+       Node restOfBody = headReference;
+       Node newHead = new Node(val, restOfBody);
+       headReference = newHead;
+       length++;
         return true;
      }
 }
