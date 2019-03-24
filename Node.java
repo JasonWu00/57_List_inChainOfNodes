@@ -52,12 +52,14 @@ public class Node {
 
     public int sizeUsingLoops(Node node){
       int output = 0;
-      for( boolean endReached = false; endReached = true; ){
+      for( boolean endReached = false; endReached = false; ){
         if (node.referenceToNextNode == null) {
           endReached = true;
+          System.out.println("End");
         }
         else {
           output += sizeUsingLoops(referenceToNextNode);
+          System.out.println("Not end");
         }
       }
       return output;

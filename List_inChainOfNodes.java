@@ -20,7 +20,10 @@ public class List_inChainOfNodes{
 
     public int size(String a){
       if (a == "Use a loop")
-        length = headReference.sizeUsingLoops(headReference);
+        if (headReference == null)
+          length = 0;
+        else
+          length = headReference.sizeUsingLoops(headReference);
       return length;
     }
 
