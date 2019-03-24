@@ -49,4 +49,17 @@ public class Node {
     public void setReferenceToNextNode( Node referenceToNextNode) {
       this.referenceToNextNode = referenceToNextNode;
     }
+
+    public int sizeUsingLoops(Node node){
+      int output = 0;
+      for( boolean endReached = false; endReached = true; ){
+        if (node.referenceToNextNode == null) {
+          endReached = true;
+        }
+        else {
+          output += sizeUsingLoops(referenceToNextNode);
+        }
+      }
+      return output;
+    }
 }

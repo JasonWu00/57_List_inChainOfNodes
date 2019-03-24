@@ -18,6 +18,12 @@ public class List_inChainOfNodes{
       return length;
     }
 
+    public int size(String a){
+      if (a == "Use a loop")
+        length = headReference.sizeUsingLoops(headReference);
+      return length;
+    }
+
 
      /**
        @return a string representation of this list,
@@ -46,4 +52,5 @@ public class List_inChainOfNodes{
        length++;
         return true;
      }
+
 }

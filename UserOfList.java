@@ -21,7 +21,7 @@ public class UserOfList {
         int elemIndex;
         for( String elem : elements ) {
             list.addAsHead( elem);
-            System.out.println( "number of elements: " + list.size() );
+            System.out.println( "number of elements: " + list.size("Use a loop") );
         }
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
