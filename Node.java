@@ -30,8 +30,6 @@ public class Node {
     public String toString() {
         String result =
             cargoReference.toString()  // polymorphically use appropriately toString!
-          + " id " // include a usually-unique identifier for this node
-          + super.toString()
           ;
 
         // Show rest of chain of nodes
@@ -51,17 +49,14 @@ public class Node {
     }
 
     public int sizeUsingLoops(Node node){
-      int output = 0;
-      for( boolean endReached = false; endReached = false; ){
+      int output = 1;
         if (node.referenceToNextNode == null) {
-          endReached = true;
-          System.out.println("End");
+          //System.out.println("End");
         }
         else {
-          output += sizeUsingLoops(referenceToNextNode);
-          System.out.println("Not end");
+          output += sizeUsingLoops(node.referenceToNextNode);
+          //System.out.println("Not end");
         }
-      }
       return output;
     }
 }
