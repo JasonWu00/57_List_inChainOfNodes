@@ -25,5 +25,23 @@ public class UserOfList {
         }
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
+
+        System.out.println("Testing get method, it should retrieve Node number 2");
+        System.out.println(list.getAtIndex(2));
+        System.out.println("Again, but with Node 0");
+        System.out.println(list.getAtIndex(0) + System.lineSeparator());
+
+        System.out.println("Changing Node 0 to contain the letter B");
+        list.setAtIndex(0, "B");
+        System.out.println(list.getAtIndex(0));
+        System.out.println(list + System.lineSeparator());
+
+        System.out.println("Now adding a Node holding the number 3 as Node 2.");
+        list.addAtIndex(2, 3);
+        System.out.println(list + System.lineSeparator());
+
+        System.out.println("Now to remove the previously added node");
+        list.removeAtIndex(2);
+        System.out.println(list + System.lineSeparator());
     }
 }
