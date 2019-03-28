@@ -36,6 +36,11 @@ public class UserOfList {
         System.out.println(list.getAtIndex(0));
         System.out.println(list + System.lineSeparator());
 
+        System.out.println("Changing Node 3 to contain a lowercase D");
+        list.setAtIndex(3, "d");
+        System.out.println(list.getAtIndex(3));
+        System.out.println(list + System.lineSeparator());
+
         System.out.println("Now adding a Node holding the number 3 as Node 2.");
         list.addAtIndex(2, 3);
         System.out.println(list + System.lineSeparator());

@@ -27,7 +27,7 @@ public class List_inChainOfNodes{
       return length;
     }
 
-    public Node getAtIndex(int index) {
+    public Object getAtIndex(int index) {
       return headReference.get(headReference, index);
     }
 
@@ -36,26 +36,32 @@ public class List_inChainOfNodes{
     }
 
     public void addAtIndex(int index, Object value) {
-      Node backPortion = headReference.get(headReference, index);
-      Node frontPortion = headReference;
-      Node middlePortion = new Node(value);
-      frontPortion.cutOffList(frontPortion, index);
-      //ends frontPortion at where the backPortion got snipped
-      frontPortion.connectLists(frontPortion, middlePortion);
-      //add a new Node holding the value to the end
-      frontPortion.connectLists(frontPortion, backPortion);
-      //add backPortion to that
-      headReference = frontPortion;
-      length++;
+      if (index == 0)
+        addAsHead(value);
+      else {
+        Node backPortion = new Node(headReference.get(headReference, index));
+        Node frontPortion = headReference;
+        Node middlePortion = new Node(value);
+        frontPortion.cutOffList(frontPortion, index);
+        //ends frontPortion at where the backPortion got snipped
+        frontPortion.connectLists(frontPortion, middlePortion);
+        //add a new Node holding the value to the end
+        frontPortion.connectLists(frontPortion, backPortion);
+        //add backPortion to that
+        headReference = frontPortion;
+        length++;
+      }
     }
 
-    /*public void removeAtIndex(int index) {
-      Node backPortion = headReference.get(headReference, index + 1);
-      Node frontPortion = headReference.get(headReference, index - 1);
+    public void removeAtIndex(int index) {
+      Node backPortion = new Node(headReference.get(headReference, index));
+      Node frontPortion = headReference;
+      frontPortion.cutOffList(frontPortion, index);
       frontPortion.connectLists(frontPortion, backPortion);
-      frontPortion.cutOffList(frontPortion, length);
+      length--;
+      //frontPortion.cutOffList(frontPortion, length);
       //headReference = frontPortion;
-    }*/
+    }
     //Above commented out method is bugged, will be fixed later
 
      /**

@@ -67,7 +67,7 @@ public class Node {
       return output;
     }
 
-    public Node get(Node node, int index){
+    public Object get(Node node, int index){
       Node currentNode = new Node();
         if (index == 0) //base case
           currentNode = node;
@@ -77,7 +77,7 @@ public class Node {
         else { //recursive case
           currentNode.cargoReference = get(node.referenceToNextNode, index - 1);
         }
-      return currentNode;
+      return currentNode.cargoReference;
     }
 
     public void set(Node node, int index, Object value){
@@ -102,7 +102,7 @@ public class Node {
         }
     }
 
-    public void connectLists(Node parentNode, Node tailNode) {
+    public void connectLists(Node parentNode, Node tailNode) {//helper function
       if (parentNode.referenceToNextNode == null) { //binary decision
         parentNode.referenceToNextNode = tailNode; //also base case
       }
